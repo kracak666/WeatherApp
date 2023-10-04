@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Recursive&display=swap');
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+  }
+  
+  .weather-side {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+  
+  .weather-gradient {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(90deg, rgb(82, 152, 218) 29%, rgba(0,212,255,1) 74%);
+    height: 100px; 
+    border-radius: 10px;
+  }
+  
+  .date-container {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .day-dayname,
+  .date-day,
+  .location {
+    font-size: 16px;
+    color: #555555;
+  }
+  
+  .weather-temp {
+    font-size: 48px;
+    color: #333333;
+    margin: 10px 0;
+  }
+  
+  .weather-desc,
+  .weather-humidity {
+    font-size: 20px;
+    color: #555555;
+  }
