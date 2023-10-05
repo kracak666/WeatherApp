@@ -5,10 +5,17 @@ import { FiCloud } from "react-icons/fi";
 import { FiThermometer } from "react-icons/fi";
 import { BiDroplet } from "react-icons/bi";
 import { BiNotepad } from "react-icons/bi";
+import { Button } from 'semantic-ui-react';
+
+const refresh = () => {
+  window.location.reload();
+}
+
 
 const WeatherCard = ({weatherData}) => (
   
   <div class="container">
+    <Button className="button" inverted color='blue' circular icon='refresh' onClick={refresh} />
     <div class="weather-side">
         <div class="weather-gradient">
         <FiCloud size="5rem" color="white"></FiCloud>
