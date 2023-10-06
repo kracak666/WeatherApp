@@ -3,6 +3,11 @@ import './styles.css';
 import moment from 'moment';
 import { FiCloud } from "react-icons/fi";
 import { FiThermometer } from "react-icons/fi";
+import { FiCloudRain } from "react-icons/fi";
+import { FiSun } from "react-icons/fi";
+import { FiCloudOff } from "react-icons/fi";
+import { FiCloudLightning } from "react-icons/fi";
+import { FiCloudSnow } from "react-icons/fi";
 import { BiDroplet } from "react-icons/bi";
 import { BiNotepad } from "react-icons/bi";
 import { Button } from 'semantic-ui-react';
@@ -11,14 +16,35 @@ const refresh = () => {
   window.location.reload();
 }
 
+const WeatherCard = ({weatherData}) => {
+  let WeatherIcon;
 
-const WeatherCard = ({weatherData}) => (
-  
-  <div class="container">
+  switch (weatherData.weather[0].main) {
+    case 'Clear':
+      WeatherIcon = <FiSun size="5rem" color="white" />;
+      break;
+    case 'Clouds':
+      WeatherIcon = <FiCloud size="5rem" color="white" />;
+      break;
+    case 'Rain':
+      WeatherIcon = <FiCloudRain size="5rem" color="white" />;
+      break;
+    case 'Snow':
+      WeatherIcon = <FiCloudSnow size="5rem" color="white" />;
+      break;
+    case 'Thunderstorm':
+      WeatherIcon = <FiCloudLightning size="5rem" color="white" />;
+      break;
+    default:
+      WeatherIcon = <FiCloudOff size="5rem" color="white" />;
+      break;
+  }
+  return (
+    <div class="container">
     <Button className="button" inverted color='blue' circular icon='refresh' onClick={refresh} />
     <div class="weather-side">
         <div class="weather-gradient">
-        <FiCloud size="5rem" color="white"></FiCloud>
+        {WeatherIcon}
         </div>
 
         <div class="date-container">
@@ -34,6 +60,8 @@ const WeatherCard = ({weatherData}) => (
         
     </div>
   </div>
-)
+  );
+  }
+  
 
 export default WeatherCard;
